@@ -31,7 +31,7 @@ public sealed class LuaSprintSystem : SharedLuaSprintSystem
             var oldSprint = endurance.CurrentSprint;
             var hadDepleted = endurance.Depleted;
             var isFlying = HasComp<JetpackUserComponent>(uid);
-            var isBurningSprint = !isFlying && mover.CanMove && mover.IsSprinting && mover.HasDirectionalMovement && !endurance.Depleted;
+            var isBurningSprint = !isFlying && mover.CanMove && mover.Sprinting && (mover.HeldMoveButtons & MoveButtons.AnyDirection) != MoveButtons.None && !endurance.Depleted;
 
             if (isBurningSprint)
             {

@@ -24,8 +24,8 @@ public abstract class SharedLuaSprintSystem : EntitySystem
     { _moveSpeed.RefreshMovementSpeedModifiers(ent); }
     private void OnMoveInput(Entity<LuaSprintComponent> ent, ref MoveInputEvent args)
     {
-        var wasSprintHeld = (args.OldMovement & MoveButtons.Sprint) != 0;
-        var nowSprintHeld = args.Entity.Comp.IsSprinting;
+        var wasSprintHeld = (args.OldMovement & MoveButtons.Walk) == 0x0;
+        var nowSprintHeld = args.Entity.Comp.Sprinting;
         if (wasSprintHeld != nowSprintHeld)
             _moveSpeed.RefreshMovementSpeedModifiers(ent);
     }
@@ -34,8 +34,8 @@ public abstract class SharedLuaSprintSystem : EntitySystem
     {
         if (!ent.Comp.Depleted) return;
         if (!TryComp<MovementSpeedModifierComponent>(ent, out var move)) return;
-        var isSprinting = TryComp<InputMoverComponent>(ent, out var mover) && mover.IsSprinting;
-        var activeBase = isSprinting ? move.BaseSprintSpeed : move.BaseRunningSpeed;
+        var isSprinting = TryComp<InputMoverComponent>(ent, out var mover) && mover.Sprinting;
+        var activeBase = isSprinting ? move.BaseSprintSpeed : move.BaseWalkSpeed;
         if (activeBase <= 0f) return;
 
         var depletedMod = MathF.Min(1f, move.BaseWalkSpeed / activeBase);
