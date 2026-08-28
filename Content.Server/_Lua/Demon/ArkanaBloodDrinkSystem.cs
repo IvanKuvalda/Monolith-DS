@@ -54,11 +54,6 @@ public sealed class ArkanaBloodDrinkSystem : EntitySystem
         if (!TryComp<HumanoidAppearanceComponent>(args.User, out var userAppearance) || userAppearance.Species != "Demon")
             return;
 
-        // Only valid victims: Human or Dwarf
-        var species = targetAppearance.Species;
-        if (species != "Human" && species != "Dwarf")
-            return;
-
         // Need bloodstream on target
         if (!HasComp<BloodstreamComponent>(uid))
             return;
@@ -103,13 +98,8 @@ public sealed class ArkanaBloodDrinkSystem : EntitySystem
         if (maybeTarget is not EntityUid target)
             return;
 
-        // Validate still Demon and victim still human/dwarf
+        // Validate user still Demon; any victim with a bloodstream is valid
         if (userAppearance.Species != "Demon")
-            return;
-        if (!TryComp<HumanoidAppearanceComponent>(target, out var targetAppearance))
-            return;
-        var species = targetAppearance.Species;
-        if (species != "Human" && species != "Dwarf")
             return;
 
         // Determine victim blood reagent to transfer; skip Ariral blood

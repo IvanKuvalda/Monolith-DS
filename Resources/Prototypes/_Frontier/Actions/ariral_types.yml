@@ -3,10 +3,9 @@
   name: Отложить яйцо
   description: Это должно быть очень важно для вас
   components:
-  - type: LimitedCharges
-    maxCharges: 1
   - type: InstantAction
     icon: { sprite: Objects/Consumable/Food/egg.rsi, state: icon }
+    useDelay: 500
     event: !type:EggAriralLayInstantActionEvent
 
 - type: entity
