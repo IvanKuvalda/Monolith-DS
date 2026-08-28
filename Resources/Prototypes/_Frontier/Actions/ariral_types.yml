@@ -5,9 +5,8 @@
   components:
   - type: LimitedCharges
     maxCharges: 1
-  - type: Action
-    icon: { sprite: Objects/Consumable/Food/egg.rsi, state: icon }
   - type: InstantAction
+    icon: { sprite: Objects/Consumable/Food/egg.rsi, state: icon }
     event: !type:EggAriralLayInstantActionEvent
 
 - type: entity
