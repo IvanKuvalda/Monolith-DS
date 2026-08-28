@@ -23,7 +23,6 @@
   - type: Thirst
   - type: MovementSpeedModifier
     baseWalkSpeed: 2.5
-    baseRunningSpeed: 4.5
     baseSprintSpeed: 6.5
   - type: Damageable
     damageContainer: Biological

@@ -9,8 +9,7 @@
   skinColoration: Hues
   maleFirstNames: NamesSharkFirstMale
   femaleFirstNames: NamesSharkFirstFemale
-  maleLastNames: NamesSharkLast
-  femaleLastNames: NamesSharkLast
+  lastNames: NamesSharkLast
 
 - type: speciesBaseSprites
   id: MobSharkSprites

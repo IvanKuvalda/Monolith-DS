@@ -10,8 +10,7 @@
   skinColoration: TintedHues
   maleFirstNames: names_ariral_male
   femaleFirstNames: names_ariral_female
-  maleLastNames: names_ariral_last
-  femaleLastNames: names_ariral_last
+  lastNames: names_ariral_last
 
 - type: speciesBaseSprites
   id: MobAriralSprites
