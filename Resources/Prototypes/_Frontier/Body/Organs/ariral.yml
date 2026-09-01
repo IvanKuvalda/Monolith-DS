@@ -57,6 +57,7 @@
   - type: Sprite
     state: brain
   - type: Organ
+    slotId: brain # Shitmed Change
   - type: Input
     context: "ghost"
   - type: Brain
@@ -101,6 +102,8 @@
   description: "For spying on cute humans."
   components:
   - type: Organ # Shitmed Change
+    slotId: eyes # Shitmed Change
+  - type: Eyes # Shitmed Change
   - type: Sprite
     layers:
       - state: eyeball-l
@@ -159,6 +162,7 @@
   description: "Stronger than a human's; perfect for meowing loudly."
   components:
   - type: Organ # Shitmed Change
+    slotId: lungs # Shitmed Change
   - type: Sprite
     layers:
       - state: lung-l
@@ -204,7 +208,9 @@
   name: heart
   description: "You have to work hard for an ariral to give this to you."
   components:
+  - type: Heart # Shitmed Change
   - type: Organ # Shitmed Change
+    slotId: heart # Shitmed Change
   - type: Sprite
     state: heart-on
   # The heart 'metabolizes' medicines and poisons that aren't filtered out by other organs.
@@ -234,6 +240,7 @@
   description: "Putting this stomach inside your stomach would be a very bad idea."
   components:
   - type: Organ # Shitmed Change
+    slotId: stomach # Shitmed Change
   - type: Sprite
     state: stomach
   - type: Item
@@ -274,7 +281,9 @@
   name: liver
   description: "Pairing suggestion: hazmat suit and a furnace."
   components:
+  - type: Liver # Shitmed Change
   - type: Organ # Shitmed Change
+    slotId: liver # Shitmed Change
   - type: Sprite
     state: liver
   - type: Item
@@ -300,6 +309,7 @@
   description: "Filters toxins from the bloodstream, and probably puts them back into the bloodstream."
   components:
   - type: Organ # Shitmed
+    slotId: kidneys # Shitmed Change
   - type: Sprite
     layers:
       - state: kidney-l
